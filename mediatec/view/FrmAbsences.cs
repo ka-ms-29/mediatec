@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace mediatec.view
 {
-    public partial class FrmMediaTec : Form
+    public partial class FrmAbsences : Form
     {
-        public FrmMediaTec()
+        public FrmAbsences()
         {
             InitializeComponent();
         }
-
-        private void FrmMediaTec_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
