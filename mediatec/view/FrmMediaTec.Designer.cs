@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.grbPersonnel = new System.Windows.Forms.GroupBox();
-            this.btnModifiPer = new System.Windows.Forms.Button();
-            this.btnAjoutPer = new System.Windows.Forms.Button();
+            this.btnModifiPersonnel = new System.Windows.Forms.Button();
+            this.btnAjoutPersonnel = new System.Windows.Forms.Button();
             this.dgvPersonnel = new System.Windows.Forms.DataGridView();
-            this.btnSupprPer = new System.Windows.Forms.Button();
+            this.btnSupprPersonnel = new System.Windows.Forms.Button();
             this.grbAjoutPer = new System.Windows.Forms.GroupBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
@@ -54,34 +54,35 @@
             // 
             // grbPersonnel
             // 
-            this.grbPersonnel.Controls.Add(this.btnModifiPer);
-            this.grbPersonnel.Controls.Add(this.btnAjoutPer);
+            this.grbPersonnel.Controls.Add(this.btnAbsence);
+            this.grbPersonnel.Controls.Add(this.btnModifiPersonnel);
+            this.grbPersonnel.Controls.Add(this.btnAjoutPersonnel);
             this.grbPersonnel.Controls.Add(this.dgvPersonnel);
-            this.grbPersonnel.Controls.Add(this.btnSupprPer);
+            this.grbPersonnel.Controls.Add(this.btnSupprPersonnel);
             this.grbPersonnel.Location = new System.Drawing.Point(12, 25);
             this.grbPersonnel.Name = "grbPersonnel";
-            this.grbPersonnel.Size = new System.Drawing.Size(776, 314);
+            this.grbPersonnel.Size = new System.Drawing.Size(776, 321);
             this.grbPersonnel.TabIndex = 0;
             this.grbPersonnel.TabStop = false;
             this.grbPersonnel.Text = "Les personnel";
             // 
-            // btnModifiPer
+            // btnModifiPersonnel
             // 
-            this.btnModifiPer.Location = new System.Drawing.Point(155, 258);
-            this.btnModifiPer.Name = "btnModifiPer";
-            this.btnModifiPer.Size = new System.Drawing.Size(116, 38);
-            this.btnModifiPer.TabIndex = 3;
-            this.btnModifiPer.Text = "Modifier";
-            this.btnModifiPer.UseVisualStyleBackColor = true;
+            this.btnModifiPersonnel.Location = new System.Drawing.Point(155, 270);
+            this.btnModifiPersonnel.Name = "btnModifiPersonnel";
+            this.btnModifiPersonnel.Size = new System.Drawing.Size(116, 38);
+            this.btnModifiPersonnel.TabIndex = 3;
+            this.btnModifiPersonnel.Text = "Modifier";
+            this.btnModifiPersonnel.UseVisualStyleBackColor = true;
             // 
-            // btnAjoutPer
+            // btnAjoutPersonnel
             // 
-            this.btnAjoutPer.Location = new System.Drawing.Point(17, 258);
-            this.btnAjoutPer.Name = "btnAjoutPer";
-            this.btnAjoutPer.Size = new System.Drawing.Size(116, 38);
-            this.btnAjoutPer.TabIndex = 1;
-            this.btnAjoutPer.Text = "Ajouter";
-            this.btnAjoutPer.UseVisualStyleBackColor = true;
+            this.btnAjoutPersonnel.Location = new System.Drawing.Point(17, 270);
+            this.btnAjoutPersonnel.Name = "btnAjoutPersonnel";
+            this.btnAjoutPersonnel.Size = new System.Drawing.Size(116, 38);
+            this.btnAjoutPersonnel.TabIndex = 1;
+            this.btnAjoutPersonnel.Text = "Ajouter";
+            this.btnAjoutPersonnel.UseVisualStyleBackColor = true;
             // 
             // dgvPersonnel
             // 
@@ -93,14 +94,14 @@
             this.dgvPersonnel.Size = new System.Drawing.Size(740, 227);
             this.dgvPersonnel.TabIndex = 0;
             // 
-            // btnSupprPer
+            // btnSupprPersonnel
             // 
-            this.btnSupprPer.Location = new System.Drawing.Point(294, 258);
-            this.btnSupprPer.Name = "btnSupprPer";
-            this.btnSupprPer.Size = new System.Drawing.Size(116, 38);
-            this.btnSupprPer.TabIndex = 2;
-            this.btnSupprPer.Text = "Supprimer";
-            this.btnSupprPer.UseVisualStyleBackColor = true;
+            this.btnSupprPersonnel.Location = new System.Drawing.Point(294, 270);
+            this.btnSupprPersonnel.Name = "btnSupprPersonnel";
+            this.btnSupprPersonnel.Size = new System.Drawing.Size(116, 38);
+            this.btnSupprPersonnel.TabIndex = 2;
+            this.btnSupprPersonnel.Text = "Supprimer";
+            this.btnSupprPersonnel.UseVisualStyleBackColor = true;
             // 
             // grbAjoutPer
             // 
@@ -224,19 +225,18 @@
             // 
             // btnAbsence
             // 
-            this.btnAbsence.Location = new System.Drawing.Point(12, 629);
+            this.btnAbsence.Location = new System.Drawing.Point(439, 270);
             this.btnAbsence.Name = "btnAbsence";
-            this.btnAbsence.Size = new System.Drawing.Size(228, 44);
+            this.btnAbsence.Size = new System.Drawing.Size(116, 38);
             this.btnAbsence.TabIndex = 2;
-            this.btnAbsence.Text = "Les absences";
+            this.btnAbsence.Text = "Absences";
             this.btnAbsence.UseVisualStyleBackColor = true;
             // 
             // FrmMediaTec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 685);
-            this.Controls.Add(this.btnAbsence);
+            this.ClientSize = new System.Drawing.Size(800, 629);
             this.Controls.Add(this.grbAjoutPer);
             this.Controls.Add(this.grbPersonnel);
             this.Name = "FrmMediaTec";
@@ -254,9 +254,9 @@
 
         private System.Windows.Forms.GroupBox grbPersonnel;
         private System.Windows.Forms.DataGridView dgvPersonnel;
-        private System.Windows.Forms.Button btnSupprPer;
-        private System.Windows.Forms.Button btnAjoutPer;
-        private System.Windows.Forms.Button btnModifiPer;
+        private System.Windows.Forms.Button btnSupprPersonnel;
+        private System.Windows.Forms.Button btnAjoutPersonnel;
+        private System.Windows.Forms.Button btnModifiPersonnel;
         private System.Windows.Forms.GroupBox grbAjoutPer;
         private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.TextBox txtNom;

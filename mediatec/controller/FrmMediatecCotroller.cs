@@ -8,5 +8,6 @@ namespace mediatec.controller
 {
     public class FrmMediatecCotroller
     {
+
     }
 }
