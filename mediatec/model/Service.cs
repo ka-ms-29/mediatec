@@ -14,7 +14,7 @@ namespace mediatec.model
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="idprofil"></param>
+        /// <param name="idservice"></param>
         /// <param name="nom"></param>
         public Service(int idservice, string nom)
         {
@@ -25,7 +25,7 @@ namespace mediatec.model
         // <summary>
         /// Définit l'information à afficher (juste le nom)
         /// </summary>
-        /// <returns>nom du profil</returns>
+        /// <returns>nom du service</returns>
         public override string ToString()
         {
             return this.Nom;

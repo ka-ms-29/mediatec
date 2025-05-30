@@ -18,7 +18,7 @@ namespace mediatec
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMediaTec());
+            Application.Run(new view.FrmMediaTec());
         }
     }
 }

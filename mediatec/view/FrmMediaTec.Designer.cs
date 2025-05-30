@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.grbPersonnel = new System.Windows.Forms.GroupBox();
+            this.btnAbsence = new System.Windows.Forms.Button();
             this.btnModifiPersonnel = new System.Windows.Forms.Button();
-            this.btnAjoutPersonnel = new System.Windows.Forms.Button();
             this.dgvPersonnel = new System.Windows.Forms.DataGridView();
             this.btnSupprPersonnel = new System.Windows.Forms.Button();
             this.grbAjoutPer = new System.Windows.Forms.GroupBox();
@@ -46,7 +46,6 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.btnAnnulPer = new System.Windows.Forms.Button();
             this.btnEnregPer = new System.Windows.Forms.Button();
-            this.btnAbsence = new System.Windows.Forms.Button();
             this.grbPersonnel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
             this.grbAjoutPer.SuspendLayout();
@@ -56,7 +55,6 @@
             // 
             this.grbPersonnel.Controls.Add(this.btnAbsence);
             this.grbPersonnel.Controls.Add(this.btnModifiPersonnel);
-            this.grbPersonnel.Controls.Add(this.btnAjoutPersonnel);
             this.grbPersonnel.Controls.Add(this.dgvPersonnel);
             this.grbPersonnel.Controls.Add(this.btnSupprPersonnel);
             this.grbPersonnel.Location = new System.Drawing.Point(12, 25);
@@ -66,42 +64,47 @@
             this.grbPersonnel.TabStop = false;
             this.grbPersonnel.Text = "Les personnel";
             // 
+            // btnAbsence
+            // 
+            this.btnAbsence.Location = new System.Drawing.Point(606, 270);
+            this.btnAbsence.Name = "btnAbsence";
+            this.btnAbsence.Size = new System.Drawing.Size(151, 38);
+            this.btnAbsence.TabIndex = 2;
+            this.btnAbsence.Text = "gestion absences";
+            this.btnAbsence.UseVisualStyleBackColor = true;
+            
+            // 
             // btnModifiPersonnel
             // 
-            this.btnModifiPersonnel.Location = new System.Drawing.Point(155, 270);
+            this.btnModifiPersonnel.Location = new System.Drawing.Point(17, 270);
             this.btnModifiPersonnel.Name = "btnModifiPersonnel";
             this.btnModifiPersonnel.Size = new System.Drawing.Size(116, 38);
             this.btnModifiPersonnel.TabIndex = 3;
             this.btnModifiPersonnel.Text = "Modifier";
             this.btnModifiPersonnel.UseVisualStyleBackColor = true;
-            // 
-            // btnAjoutPersonnel
-            // 
-            this.btnAjoutPersonnel.Location = new System.Drawing.Point(17, 270);
-            this.btnAjoutPersonnel.Name = "btnAjoutPersonnel";
-            this.btnAjoutPersonnel.Size = new System.Drawing.Size(116, 38);
-            this.btnAjoutPersonnel.TabIndex = 1;
-            this.btnAjoutPersonnel.Text = "Ajouter";
-            this.btnAjoutPersonnel.UseVisualStyleBackColor = true;
+            this.btnModifiPersonnel.Click += new System.EventHandler(this.btnModifiPersonnel_Click);
             // 
             // dgvPersonnel
             // 
             this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonnel.Location = new System.Drawing.Point(17, 25);
             this.dgvPersonnel.Name = "dgvPersonnel";
+            this.dgvPersonnel.RowHeadersVisible = false;
             this.dgvPersonnel.RowHeadersWidth = 62;
             this.dgvPersonnel.RowTemplate.Height = 28;
+            this.dgvPersonnel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersonnel.Size = new System.Drawing.Size(740, 227);
             this.dgvPersonnel.TabIndex = 0;
             // 
             // btnSupprPersonnel
             // 
-            this.btnSupprPersonnel.Location = new System.Drawing.Point(294, 270);
+            this.btnSupprPersonnel.Location = new System.Drawing.Point(155, 270);
             this.btnSupprPersonnel.Name = "btnSupprPersonnel";
             this.btnSupprPersonnel.Size = new System.Drawing.Size(116, 38);
             this.btnSupprPersonnel.TabIndex = 2;
             this.btnSupprPersonnel.Text = "Supprimer";
             this.btnSupprPersonnel.UseVisualStyleBackColor = true;
+            this.btnSupprPersonnel.Click += new System.EventHandler(this.btnSupprPersonnel_Click);
             // 
             // grbAjoutPer
             // 
@@ -213,6 +216,7 @@
             this.btnAnnulPer.TabIndex = 1;
             this.btnAnnulPer.Text = "Annuler";
             this.btnAnnulPer.UseVisualStyleBackColor = true;
+            this.btnAnnulPer.Click += new System.EventHandler(this.btnAnnulPer_Click);
             // 
             // btnEnregPer
             // 
@@ -222,15 +226,7 @@
             this.btnEnregPer.TabIndex = 0;
             this.btnEnregPer.Text = "Enregistrer";
             this.btnEnregPer.UseVisualStyleBackColor = true;
-            // 
-            // btnAbsence
-            // 
-            this.btnAbsence.Location = new System.Drawing.Point(439, 270);
-            this.btnAbsence.Name = "btnAbsence";
-            this.btnAbsence.Size = new System.Drawing.Size(116, 38);
-            this.btnAbsence.TabIndex = 2;
-            this.btnAbsence.Text = "Absences";
-            this.btnAbsence.UseVisualStyleBackColor = true;
+            this.btnEnregPer.Click += new System.EventHandler(this.btnEnregPer_Click);
             // 
             // FrmMediaTec
             // 
@@ -241,7 +237,6 @@
             this.Controls.Add(this.grbPersonnel);
             this.Name = "FrmMediaTec";
             this.Text = "MedieTec";
-            this.Load += new System.EventHandler(this.FrmMediaTec_Load);
             this.grbPersonnel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
             this.grbAjoutPer.ResumeLayout(false);
@@ -255,7 +250,6 @@
         private System.Windows.Forms.GroupBox grbPersonnel;
         private System.Windows.Forms.DataGridView dgvPersonnel;
         private System.Windows.Forms.Button btnSupprPersonnel;
-        private System.Windows.Forms.Button btnAjoutPersonnel;
         private System.Windows.Forms.Button btnModifiPersonnel;
         private System.Windows.Forms.GroupBox grbAjoutPer;
         private System.Windows.Forms.TextBox txtPrenom;

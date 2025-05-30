@@ -9,26 +9,26 @@ namespace mediatec.model
     public class Absence
     {
         /// <summary>
-        /// les proprite de la class Absence correspandant aux champs de la table Absence de BDD mediatec
+        /// les probriétés corespandant aux champs da la table BDD
         /// </summary>
-        public int IdPersonnel { get;}
-        public int IdMotif { get;}
-        public DateTime DateDebut { get; set; }
-        public DateTime DateFin { get; set; }
-       
+        public Personnel personnel { get; set; }
+        public DateTime dateDebut {  get; set; }
+        public DateTime dateFin {  get; set; }
+        public Motif motif {  get; set; }
 
         /// <summary>
-        /// la constructeur de la class et valorisation des propriétés
+        /// constructeur da la classe, valorisation des propriétés
         /// </summary>
-        public Absence(int idpersonnel, int idmotif, DateTime datedebut, DateTime datefin) 
+        /// <param name="personnel"></param>
+        /// <param name="dateDebut"></param>
+        /// <param name="dateFin"></param>
+        /// <param name="motif"></param>
+        public Absence(Personnel personnel, DateTime dateDebut, DateTime dateFin, Motif motif)
         {
-            this.IdPersonnel = idpersonnel;
-            this.IdMotif = idmotif;
-            this.DateDebut = datedebut;
-            this.DateFin = datefin;
-            
+            this.personnel = personnel;
+            this.dateDebut = dateDebut;
+            this.dateFin = dateFin;
+            this.motif = motif;
         }
-
-
     }
 }

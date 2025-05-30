@@ -8,10 +8,11 @@ using mediatec.model;
 namespace mediatec.dal
 {
     /// <summary>
-    /// Classe permettant de gérer les demandes concernant les Services
+    /// Classe permettant de gérer les demandes concernant les motifs
     /// </summary>
-    public class ServiceAccess
+    public class MotifAccess
     {
+
         /// <summary>
         /// Instance unique de l'accès aux données
         /// </summary>
@@ -20,21 +21,20 @@ namespace mediatec.dal
         /// <summary>
         /// Constructeur pour créer l'accès aux données
         /// </summary>
-        public ServiceAccess()
+        public MotifAccess()
         {
             access = Access.GetInstance();
         }
-
         /// <summary>
-        /// Récupère et retourne les service
+        /// Récupère et retourne les motifs
         /// </summary>
-        /// <returns>liste des service</returns>
-        public List<Service> GetService()
+        /// <returns>liste des motifs</returns>
+        public List<Motif> GetLesMotifs()
         {
-            List<Service> lesService = new List<Service>();
+            List<Motif> lesMotifs = new List<Motif>();
             if (access.Manager != null)
             {
-                string req = "select * from service order by nom;";
+                string req = "select * from motif order by libelle;";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -42,8 +42,8 @@ namespace mediatec.dal
                     {
                         foreach (Object[] record in records)
                         {
-                            Service service = new Service((int)record[0], (string)record[1]);
-                            lesService.Add(service);
+                            Motif motif = new Motif((int)record[0], (string)record[1]);
+                            lesMotifs.Add(motif);
                         }
                     }
                 }
@@ -53,7 +53,7 @@ namespace mediatec.dal
                     Environment.Exit(0);
                 }
             }
-            return lesService;
+            return lesMotifs;
         }
     }
 }
