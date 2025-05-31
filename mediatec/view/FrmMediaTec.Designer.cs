@@ -72,7 +72,7 @@
             this.btnAbsence.TabIndex = 2;
             this.btnAbsence.Text = "gestion absences";
             this.btnAbsence.UseVisualStyleBackColor = true;
-            
+            this.btnAbsence.Click += new System.EventHandler(this.btnAbsence_Click);
             // 
             // btnModifiPersonnel
             // 
@@ -86,9 +86,14 @@
             // 
             // dgvPersonnel
             // 
+            this.dgvPersonnel.AllowUserToAddRows = false;
+            this.dgvPersonnel.AllowUserToDeleteRows = false;
+            this.dgvPersonnel.AllowUserToResizeColumns = false;
+            this.dgvPersonnel.AllowUserToResizeRows = false;
             this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonnel.Location = new System.Drawing.Point(17, 25);
             this.dgvPersonnel.Name = "dgvPersonnel";
+            this.dgvPersonnel.ReadOnly = true;
             this.dgvPersonnel.RowHeadersVisible = false;
             this.dgvPersonnel.RowHeadersWidth = 62;
             this.dgvPersonnel.RowTemplate.Height = 28;
@@ -157,6 +162,7 @@
             // 
             // cboService
             // 
+            this.cboService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboService.FormattingEnabled = true;
             this.cboService.Location = new System.Drawing.Point(506, 152);
             this.cboService.Name = "cboService";
@@ -235,6 +241,8 @@
             this.ClientSize = new System.Drawing.Size(800, 629);
             this.Controls.Add(this.grbAjoutPer);
             this.Controls.Add(this.grbPersonnel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmMediaTec";
             this.Text = "MedieTec";
             this.grbPersonnel.ResumeLayout(false);

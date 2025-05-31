@@ -25,6 +25,7 @@ namespace mediatec.controller
         public FrmAbsenceController()
         {
             motifAccess = new MotifAccess();
+            absenceAccess = new AbsenceAccess();
         }
         
 
@@ -40,10 +41,35 @@ namespace mediatec.controller
         /// Récupère et retourne les infos des absence
         /// </summary>
         /// <returns>liste des absence</returns>
-        public List<Absence> GetLesAbsence()
+        public List<Absence> GetLesAbsence(Personnel personnelSelectionne)
         {
-            return absenceAccess.GetLesAbsence();
+            return absenceAccess.GetLesAbsence(personnelSelectionne);
         }
 
+        /// <summary>
+        /// Demande de suppression d'un absence
+        /// </summary>
+        /// <param name="absence">objet absence à supprimer</param>
+        public void DelAbsence(Absence absence)
+        {
+            absenceAccess.DelAbsence(absence);
+        }
+
+        // <summary>
+        /// Demande d'ajout d'un absence
+        /// </summary>
+        /// <param name="absence">objet absence à ajouter</param>
+        public void AddAbsence(Absence absence)
+        {
+            absenceAccess.AddAbsence(absence);
+        }
+        /// <summary>
+        /// Demande de modification d'un absence
+        /// </summary>
+        /// <param name="absence">objet absence à modifier</param>
+        public void UpdateAbsence(Absence absence, DateTime ancienneDateDebut)
+        {
+            absenceAccess.UpdateAbsence(absence, ancienneDateDebut);
+        }
     }   
 }

@@ -75,8 +75,10 @@ namespace mediatec.view
         private void RemplirListeService()
         {
             List<Service> lesService = controller.GetLesServices();
+            lesService.Insert(0, new Service(0, ""));
             bdgService.DataSource = lesService;
             cboService.DataSource = bdgService;
+            cboService.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -89,11 +91,11 @@ namespace mediatec.view
             grbPersonnel.Enabled = !modif;
             if (modif)
             {
-                grbAjoutPer.Text = "modifier un développeur";
+                grbAjoutPer.Text = "modifier un personnel";
             }
             else
             {
-                grbAjoutPer.Text = "ajouter un développeur";
+                grbAjoutPer.Text = "ajouter un personnel";
                 txtNom.Text = "";
                 txtPrenom.Text = "";
                 txtTel.Text = "";
@@ -144,7 +146,7 @@ namespace mediatec.view
 
         private void btnEnregPer_Click(object sender, EventArgs e)
         {
-            if (!txtNom.Text.Equals("") && !txtPrenom.Text.Equals("") && !txtTel.Text.Equals("") && !txtMail.Text.Equals("") && cboService.SelectedIndex != -1)
+            if (!txtNom.Text.Equals("") && !txtPrenom.Text.Equals("") && !txtTel.Text.Equals("") && !txtMail.Text.Equals("") && cboService.SelectedIndex !=0 )
             {
                 Service service = (Service)bdgService.List[bdgService.Position];
                 if (enCoursDeModifPersonnel)
@@ -180,6 +182,12 @@ namespace mediatec.view
             }
         }
 
-        
+        private void btnAbsence_Click(object sender, EventArgs e)
+        {
+            Personnel personnelSelectionne = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
+            FrmAbsences frmAbsence = new FrmAbsences(personnelSelectionne);
+            frmAbsence.ShowDialog();
+            
+        }
     }
 }
