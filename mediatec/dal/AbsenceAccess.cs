@@ -25,11 +25,11 @@ namespace mediatec.dal
         {
             access = Access.GetInstance();
         }
-
-        // <summary>
+        /// <summary>
         /// Récupère et retourne les motifs
         /// </summary>
-        /// <returns>liste des motifs</returns>
+        /// <param name="personnelSelectionne"></param>
+        /// <returns></returns>
         public List<Absence> GetLesAbsence(Personnel personnelSelectionne)
         {
             List<Absence> lesAbsence = new List<Absence>();
@@ -74,7 +74,7 @@ namespace mediatec.dal
         /// <summary>
         /// Demande de suppression d'un absence
         /// </summary>
-        /// <param name="absence">objet absence à supprimer</param>
+        /// <param name="absence"></param>
         public void DelAbsence(Absence absence)
         {
             if (access.Manager != null)
@@ -97,7 +97,7 @@ namespace mediatec.dal
         /// <summary>
         /// Demande d'ajout un absence
         /// </summary>
-        /// <param name="absence">objet absence à ajouter</param>
+        /// <param name="absence"></param>
         public void AddAbsence(Absence absence)
         {
             if (access.Manager != null)
@@ -121,10 +121,11 @@ namespace mediatec.dal
                 }
             }
         }
-        // <summary>
+        /// <summary>
         /// Demande de modification d'un absence
         /// </summary>
-        /// <param name="absence">objet absence à modifier</param>
+        /// <param name="absence"></param>
+        /// <param name="ancienneDateDebut"></param>
         public void UpdateAbsence(Absence absence, DateTime ancienneDateDebut)
         {
             if (access.Manager != null)

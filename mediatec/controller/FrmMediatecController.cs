@@ -70,7 +70,10 @@ namespace mediatec.controller
         {
             personnelAccess.AddPersonnel(personnel);
         }
-
+        /// <summary>
+        /// Demande de modification d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void UpdatePersonnel(Personnel personnel)
         {
             personnelAccess.UpdatePersonnel(personnel);

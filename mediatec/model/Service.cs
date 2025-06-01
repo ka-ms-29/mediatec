@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace mediatec.model
 {
+    /// <summary>
+    /// classe correspandant a la table service
+    /// </summary>
     public class Service
     {
         public int Idservice { get; }

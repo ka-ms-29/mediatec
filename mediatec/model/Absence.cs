@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace mediatec.model
 {
+    /// <summary>
+    /// classe corespandant a la table absence
+    /// </summary>
     public class Absence
     {
-        /// <summary>
-        /// les probriétés corespandant aux champs da la table BDD
-        /// </summary>
         public Personnel personnel { get; set; }
         public DateTime dateDebut {  get; set; }
         public DateTime dateFin {  get; set; }

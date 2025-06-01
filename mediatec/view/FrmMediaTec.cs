@@ -58,7 +58,7 @@ namespace mediatec.view
            
         }
         /// <summary>
-        /// Affiche les développeurs
+        /// affichage des personnels
         /// </summary>
         private void RemplirListePersonnel()
         {
@@ -104,7 +104,11 @@ namespace mediatec.view
         }
 
         
-
+        /// <summary>
+        /// demande modification d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifiPersonnel_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
@@ -123,7 +127,11 @@ namespace mediatec.view
             }
 
         }
-
+        /// <summary>
+        /// demande suppersion d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprPersonnel_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
@@ -143,7 +151,11 @@ namespace mediatec.view
         }
 
         
-
+        /// <summary>
+        /// demande d'enregistrement d'ajoit ou de modification d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEnregPer_Click(object sender, EventArgs e)
         {
             if (!txtNom.Text.Equals("") && !txtPrenom.Text.Equals("") && !txtTel.Text.Equals("") && !txtMail.Text.Equals("") && cboService.SelectedIndex !=0 )
@@ -173,7 +185,11 @@ namespace mediatec.view
             }
 
         }
-
+        /// <summary>
+        /// demande d'annulation d'joute ou de modification d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnnulPer_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -181,7 +197,11 @@ namespace mediatec.view
                 EnCourseModifPersonnel(false);
             }
         }
-
+        /// <summary>
+        /// demande d'acceder a la fenetre gestion d'absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbsence_Click(object sender, EventArgs e)
         {
             Personnel personnelSelectionne = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];

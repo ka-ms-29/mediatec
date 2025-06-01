@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace mediatec.model
 {
+    /// <summary>
+    /// classe corespandant a la table personnel
+    /// </summary>
     public class Personnel
     {
-        /// <summary>
-        /// les proprite de la class Personnel correspandant aux champs de la table personnel de BDD mediatec
-        /// </summary>
         public int Idpersonnel { get; }
         public string Nom { get; set; }
         public string Prenom { get; set; }

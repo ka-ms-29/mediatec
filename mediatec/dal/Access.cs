@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace mediatec.dal
 {
+    /// <summary>
+    /// Singleton : classe d'accès à BddManager
+    /// </summary>
     public class Access
     {
         /// <summary>

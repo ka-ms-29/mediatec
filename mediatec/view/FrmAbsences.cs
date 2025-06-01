@@ -50,6 +50,9 @@ namespace mediatec.view
 
 
         }
+        /// <summary>
+        /// Initialisations
+        /// </summary>
         private void Init()
         {
             controller = new FrmAbsenceController();
@@ -83,7 +86,11 @@ namespace mediatec.view
             dgvAbsence.Columns["personnel"].Visible = false;
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
-
+        /// <summary>
+        /// demande de suupromer un absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimAbsence_Click(object sender, EventArgs e)
         {
             if (dgvAbsence.SelectedRows.Count > 0)
@@ -103,7 +110,7 @@ namespace mediatec.view
         /// <summary>
         /// Modification d'affichage suivant si on est en cours de modif ou d'ajout d'un absence
         /// </summary>
-        /// <param name="absence"></param>
+        /// <param name="modif"></param>
         private void EnCourseModifAbsence(Boolean modif)
         {
             enCoursDeModifAbsence = modif;
@@ -120,7 +127,11 @@ namespace mediatec.view
 
             }
         }
-
+        /// <summary>
+        /// demande modifier d'un absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifiAbsence_Click(object sender, EventArgs e)
         {
             if (dgvAbsence.SelectedRows.Count > 0)
@@ -137,7 +148,11 @@ namespace mediatec.view
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-
+        /// <summary>
+        /// demande d'enregistrement d'ajout ou de modification d'absence 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEnregAbsence_Click(object sender, EventArgs e)
         {
             if (dtpDebut.Checked && dtpFin.Checked && cboMotif.SelectedIndex != 0)
@@ -173,7 +188,11 @@ namespace mediatec.view
                 MessageBox.Show("Tous les champs doivent être remplis.", "Information");
             }
         }
-
+        /// <summary>
+        /// damande annulation d'ajout ou de modification d'absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnnulAbsence_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)

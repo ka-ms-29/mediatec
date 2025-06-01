@@ -22,6 +22,9 @@ namespace mediatec.controller
         /// objet d'accès aux opérations possibles sur motif
         /// </summary>
         private readonly MotifAccess motifAccess;
+        /// <summary>
+        /// Récupère l'acces aux données
+        /// </summary>
         public FrmAbsenceController()
         {
             motifAccess = new MotifAccess();
@@ -54,8 +57,7 @@ namespace mediatec.controller
         {
             absenceAccess.DelAbsence(absence);
         }
-
-        // <summary>
+        /// <summary>
         /// Demande d'ajout d'un absence
         /// </summary>
         /// <param name="absence">objet absence à ajouter</param>
@@ -66,7 +68,8 @@ namespace mediatec.controller
         /// <summary>
         /// Demande de modification d'un absence
         /// </summary>
-        /// <param name="absence">objet absence à modifier</param>
+        /// <param name="absence"></param>
+        /// <param name="ancienneDateDebut"></param>
         public void UpdateAbsence(Absence absence, DateTime ancienneDateDebut)
         {
             absenceAccess.UpdateAbsence(absence, ancienneDateDebut);
