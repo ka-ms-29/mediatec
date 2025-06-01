@@ -13,6 +13,9 @@ using mediatec.controller;
 
 namespace mediatec.view
 {
+    /// <summary>
+    /// Fenete d'affichage les personnels et leurs service
+    /// </summary>
     public partial class FrmMediaTec : Form
     {
         /// <summary>

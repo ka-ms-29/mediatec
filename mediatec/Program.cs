@@ -8,8 +8,16 @@ using mediatec.view;
 
 namespace mediatec
 {
+    /// <summary>
+    /// Application MediaTec : Atelier 2
+    /// </summary>
+    internal class NamespaceDoc
+    {
+
+    }
     internal static class Program
     {
+
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>

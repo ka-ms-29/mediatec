@@ -12,6 +12,9 @@ using mediatec.model;
 
 namespace mediatec.view
 {
+    /// <summary>
+    /// Fenetre d'affichage les absence d'un personnel selectionné et leurs motif d'absence
+    /// </summary>
     public partial class FrmAbsences : Form
     {
         /// <summary>

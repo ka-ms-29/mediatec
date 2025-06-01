@@ -12,6 +12,9 @@ using mediatec.model;
 
 namespace mediatec.view
 {
+    /// <summary>
+    /// Fenetre authantification permettant d'acceder a la fenetre MediaTec
+    /// </summary>
     public partial class FrmAuthentification : Form
     {
         /// <summary>
