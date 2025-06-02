@@ -103,8 +103,8 @@ namespace mediatec.dal
         {
             if (access.Manager != null)
             {
-                
 
+                
                 string req = "insert into absence(idpersonnel, datedebut, datefin, idmotif) ";
                 req += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -119,8 +119,7 @@ namespace mediatec.dal
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
-                    Environment.Exit(0);
+                    MessageBox.Show("Erreur pendant la vérification : " + e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 
@@ -163,13 +162,12 @@ namespace mediatec.dal
         {
             if (access.Manager != null)
             {
-                string req = "select * from absence where idpersonnel = @idpersonnel and datedebut = @datedebut and datefin = @datefin and idmotif = @idmotif;";
+                string req = "select * from absence where idpersonnel = @idpersonnel and datedebut = @datedebut;";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idpersonnel", absence.personnel.Idpersonnel);
                 parameters.Add("@datedebut", absence.dateDebut);
-                parameters.Add("@datefin", absence.dateFin);
-                parameters.Add("@idmotif", absence.motif.Idmotif);
+                
 
                 try
                 {

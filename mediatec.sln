@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mediatec", "mediatec\mediatec.csproj", "{33039C7D-DCD3-4A93-B88D-E4A069011665}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MediatecInstallateur", "MediatecInstallateur\MediatecInstallateur.vdproj", "{D626C32F-8167-966F-E988-420121F18C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{33039C7D-DCD3-4A93-B88D-E4A069011665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33039C7D-DCD3-4A93-B88D-E4A069011665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33039C7D-DCD3-4A93-B88D-E4A069011665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D626C32F-8167-966F-E988-420121F18C8B}.Debug|Any CPU.ActiveCfg = Debug
+		{D626C32F-8167-966F-E988-420121F18C8B}.Debug|Any CPU.Build.0 = Debug
+		{D626C32F-8167-966F-E988-420121F18C8B}.Release|Any CPU.ActiveCfg = Release
+		{D626C32F-8167-966F-E988-420121F18C8B}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
