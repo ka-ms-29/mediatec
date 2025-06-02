@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using mediatec.model;
 
 namespace mediatec.dal
@@ -137,6 +138,37 @@ namespace mediatec.dal
                     Environment.Exit(0);
                 }
             }
+        }
+        /// <summary>
+        /// methode permettant verrifier la existant da la personnel
+        /// </summary>
+        /// <param name="personnel"></param>
+        /// <returns></returns>
+        public Boolean PersonnelExist(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "select * from personnel where nom = @nom and prenom = @prenom and mail = @mail and tel = @tel and idservice = @idservice;";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@nom", personnel.Nom);
+                parameters.Add("@prenom", personnel.Prenom);
+                parameters.Add("@mail", personnel.Mail);
+                parameters.Add("@tel", personnel.Tel);
+                parameters.Add("@idservice", personnel.Service.Idservice); 
+
+                try
+                {
+                    List<Object[]> records = access.Manager.ReqSelect(req, parameters);
+                    return (records != null && records.Count > 0);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+            return false;
         }
 
     }

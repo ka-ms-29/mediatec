@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using mediatec.model;
 
@@ -56,9 +57,9 @@ namespace mediatec.dal
                             DateTime datefin = (DateTime)record[8];
                             Motif motif = new Motif((int)record[9], (string)record[10]);
                             Absence absence = new Absence(personnel, datedebut, datefin, motif);
-                            
-                            lesAbsence .Add(absence);
-                        
+
+                            lesAbsence.Add(absence);
+
                         }
                     }
                 }
@@ -102,6 +103,8 @@ namespace mediatec.dal
         {
             if (access.Manager != null)
             {
+                
+
                 string req = "insert into absence(idpersonnel, datedebut, datefin, idmotif) ";
                 req += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -109,7 +112,7 @@ namespace mediatec.dal
                 parameters.Add("@datedebut", absence.dateDebut);
                 parameters.Add("@datefin", absence.dateFin);
                 parameters.Add("@idmotif", absence.motif.Idmotif);
-                
+
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -119,6 +122,8 @@ namespace mediatec.dal
                     Console.WriteLine(e.Message);
                     Environment.Exit(0);
                 }
+
+
             }
         }
         /// <summary>
@@ -148,6 +153,36 @@ namespace mediatec.dal
                     Environment.Exit(0);
                 }
             }
+        }
+        /// <summary>
+        /// verrification d'existant d'un absence dans la base de donné
+        /// </summary>
+        /// <param name="absence"></param>
+        /// <returns></returns>
+        public Boolean AbsenceExist(Absence absence)
+        {
+            if (access.Manager != null)
+            {
+                string req = "select * from absence where idpersonnel = @idpersonnel and datedebut = @datedebut and datefin = @datefin and idmotif = @idmotif;";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idpersonnel", absence.personnel.Idpersonnel);
+                parameters.Add("@datedebut", absence.dateDebut);
+                parameters.Add("@datefin", absence.dateFin);
+                parameters.Add("@idmotif", absence.motif.Idmotif);
+
+                try
+                {
+                    List<Object[]> records = access.Manager.ReqSelect(req, parameters);
+                    return (records != null && records.Count > 0);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+            return false;
         }
     }
 }

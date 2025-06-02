@@ -177,7 +177,16 @@ namespace mediatec.view
                 else
                 {
                     Personnel personnel = new Personnel(0, txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text, service);
-                    controller.AddPersonnel(personnel);
+                    if (!controller.PersonnelExist(personnel))
+                    {
+                        controller.AddPersonnel(personnel);
+                    }
+                    else
+                    {
+                        MessageBox.Show("cette personnel existe déjà dans la base de donnée!");
+                        return;
+                    }
+                    
                 }
                 RemplirListePersonnel();
                 EnCourseModifPersonnel(false);

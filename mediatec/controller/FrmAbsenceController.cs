@@ -74,5 +74,14 @@ namespace mediatec.controller
         {
             absenceAccess.UpdateAbsence(absence, ancienneDateDebut);
         }
+        /// <summary>
+        /// Verrification d'existance d'absence
+        /// </summary>
+        /// <param name="absence"></param>
+        /// <returns></returns>
+        public bool AbsenceExist(Absence absence)
+        {
+            return absenceAccess.AbsenceExist(absence); 
+        }
     }   
 }

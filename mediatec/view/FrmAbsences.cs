@@ -176,7 +176,16 @@ namespace mediatec.view
                     else
                     {
                         Absence absence = new Absence(personnelSelectionne, dtpDebut.Value, dtpFin.Value, motif);
-                        controller.AddAbsence(absence);
+                        if (!controller.AbsenceExist(absence))
+                        {
+                            controller.AddAbsence(absence);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cette absence existe déjà dans la base de données.");
+                            return;
+                        }
+                        
                     }
                     RemplirListeAbsence();
                     EnCourseModifAbsence(false);

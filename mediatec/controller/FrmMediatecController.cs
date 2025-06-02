@@ -78,7 +78,15 @@ namespace mediatec.controller
         {
             personnelAccess.UpdatePersonnel(personnel);
         }
-
+        /// <summary>
+        /// Verrification d'existance personnel
+        /// </summary>
+        /// <param name="personnel"></param>
+        /// <returns></returns>
+        public Boolean PersonnelExist(Personnel personnel)
+        {
+            return personnelAccess.PersonnelExist(personnel);
+        }
 
 
     }
